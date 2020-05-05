@@ -1,0 +1,9 @@
+set long 1000
+set pagesize 0
+select DBMS_METADATA.GET_DDL('TABLE','Wallet_User') from DUAL
+
+select DBMS_METADATA.GET_DDL('TABLE','Wallet_Account') from DUAL
+
+select DBMS_METADATA.GET_DDL('TABLE','Wallet_Transaction') from DUAL
+
+

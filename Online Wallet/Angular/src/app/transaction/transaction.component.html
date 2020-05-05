@@ -1,0 +1,35 @@
+
+<div style ="text-align:center">
+
+<table margin="center" >
+    <tr>
+        <th>DateTime</th>
+        
+        <th>RecieverId</th>
+        <th>SenderId</th>
+        <th>Amount</th>
+        <th>TransactionId</th>
+        
+       
+    </tr>
+    <tr *ngFor= "let t of history">
+       
+        <td>{{t.dateOfTransaction}}</td>
+       
+        <td>{{t.receiverId}}</td>
+        <td>{{t.senderId}}</td>
+        <td>{{t.amount}}</td>
+        <td>{{t.transactionId}}</td>
+        </tr>
+
+        
+       
+        
+
+        
+       
+    
+</table>
+ 
+ </div>
+
