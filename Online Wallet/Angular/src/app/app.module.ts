@@ -4,24 +4,30 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MyWalletComponent } from './my-wallet/my-wallet.component';
+import { MyTransactionsComponent } from './my-wallet/my-transactions/my-transactions.component';
+import { ShowBalanceComponent } from './my-wallet/show-balance/show-balance.component';
+import { TransactionItemComponent } from './my-wallet/my-transactions/transaction-item/transaction-item.component';
 import { HttpClientModule } from '@angular/common/http';
-import {FormsModule}  from '@angular/forms';
-import { TransactionComponent } from './transaction/transaction.component';
+
+
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MyWalletComponent,
-    TransactionComponent
+    MyTransactionsComponent,
+    ShowBalanceComponent,
+    TransactionItemComponent,
+    
     
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    FormsModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

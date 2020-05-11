@@ -25,8 +25,8 @@ public interface WalletTransactionDao extends JpaRepository <WalletTransaction, 
 
 
 
-   @Query( value = "select * from wallet_transaction where sender_id = :user_id or receiver_id = :user_id", nativeQuery=true)
-
-   List<WalletTransaction> getTransaction(@Param("user_id") int user_id);
+	@Query( value = "select * from wallet_transaction where sender_id = :user_id or receiver_id = :user_id", nativeQuery=true)
+	List<WalletTransaction> getTransaction(@Param("user_id") int user_id);
+   
 
 }

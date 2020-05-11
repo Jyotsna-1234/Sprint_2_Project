@@ -51,5 +51,20 @@ public double showBalance(int uid) {
 
 
 
+
+   public Optional<Integer> getAccountId(int uid){
+		
+		return accountDao.getAccountId(uid);
+	}
+
+
+
+	public Optional<String> getAccountName(int uid) {
+		
+		return accountDao.getAccountName(uid);
+	}
+
+
+
 }
 

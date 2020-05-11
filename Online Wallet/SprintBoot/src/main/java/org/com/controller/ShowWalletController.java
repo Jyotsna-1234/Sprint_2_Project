@@ -78,7 +78,15 @@ return showService.showTransactions(uid);
 
 
 }
-
+   @RequestMapping("/getAccountId/{id}")
+	public Optional<Integer> getAccountId(@PathVariable("id") int uid){
+		return showService.getAccountId(uid);
+	}
+	
+	@RequestMapping("/getAccountName/{id}")
+	public Optional<String> getAccountName(@PathVariable("id") int uid){
+		return showService.getAccountName(uid);
+	}
 
    
 

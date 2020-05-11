@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MyWalletService } from './my-wallet.service';
-import { Router } from '@angular/router';
-import { ThrowStmt } from '@angular/compiler';
 
 
 @Component({
@@ -10,34 +7,18 @@ import { ThrowStmt } from '@angular/compiler';
   styleUrls: ['./my-wallet.component.css']
 })
 export class MyWalletComponent implements OnInit {
+  
 
-  balance:Number
-  UserId:Number
- 
-  
-  
-  constructor(private service:MyWalletService,private router:Router)
-   
-  { 
+  accountStatus=sessionStorage.getItem('userStatus');
+  constructor() {
+    sessionStorage.setItem('userId','101');
+  sessionStorage.setItem('accountId','201');
+  sessionStorage.setItem('userStatus','accepted');
    }
 
-
   ngOnInit(): void {
-sessionStorage.setItem('UserId','102')
-    this.showBalance()
-  }
 
-  showBalance() {
-this.service.showBalance(sessionStorage.getItem('UserId')).subscribe(
-  data=>{
-    console.log(data)
-    this.balance=data 
-  },
-  error=>console.log(error)
-)
+    console.log(this.accountStatus);
   }
-  
-  
-
 
 }
