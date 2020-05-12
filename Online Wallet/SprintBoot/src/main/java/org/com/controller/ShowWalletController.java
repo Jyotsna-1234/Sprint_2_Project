@@ -44,34 +44,14 @@ WalletUserDao walletuserdao;
 
 
 
-//*******************************************
-@GetMapping("/getUser")
-public List<WalletAccount> getAllUser() {
-	
-	return walletAccountdao.findAll();
-	
-}
-//****************************************************
    @RequestMapping("/showBalance/{id}")
-
-
-
-   public double showBalance(@PathVariable("id") int uid) {
-
-
+public double showBalance(@PathVariable("id") int uid) {
 
 return  showService.showBalance(uid);
+}
 
-
-	}
-
-
-
-//////////*******************************************************
 
    @RequestMapping("/showTransactions/{id}")
-
-
    public List<WalletTransaction> showTransactions(@PathVariable("id") int uid){
 	   
 return showService.showTransactions(uid);
@@ -82,7 +62,7 @@ return showService.showTransactions(uid);
 	public Optional<Integer> getAccountId(@PathVariable("id") int uid){
 		return showService.getAccountId(uid);
 	}
-	
+
 	@RequestMapping("/getAccountName/{id}")
 	public Optional<String> getAccountName(@PathVariable("id") int uid){
 		return showService.getAccountName(uid);

@@ -28,21 +28,18 @@ class OnlineWallet3ApplicationTests {
 		restTemplate = new RestTemplate();
 		
 	}
-	/////////****************************************
-
+	
 	@Test
 	public void showTransactionById()
 	{
 	
 ResponseEntity<WalletTransaction> entity=
-		restTemplate.getForEntity("http://localhost:9060/wallet/showTransactions/103",WalletTransaction.class );
+		restTemplate.getForEntity("http://localhost:9060/wallet/showTransactions/201",WalletTransaction.class );
 
 Assertions.assertNotNull(entity);
-logger.info("search for balance");
+logger.info("search for transaction histoy");
 
 	}
-	////////////******************************************************
-	
 	
 	@Test
 	public void showBalanceById() {
@@ -52,7 +49,31 @@ restTemplate.getForEntity("http://localhost:9060/wallet/showBalance/102",WalletA
 
 
 Assertions.assertNotNull(entity1);
-logger.info("search for transaction histoy");
+logger.info("search for balance");
+
+
+	}
+	@Test
+	public void getAccountId() {
+
+ResponseEntity<WalletAccount> entity2=
+restTemplate.getForEntity("http://localhost:9060/wallet/getAccountId/101",WalletAccount.class );
+
+
+Assertions.assertNotNull(entity2);
+logger.info("search for Account Id");
+
+
+	}
+	@Test
+	public void getAccountName() {
+
+ResponseEntity<WalletAccount> entity3=
+restTemplate.getForEntity("http://localhost:9060/wallet/getAccountName/102",WalletAccount.class );
+
+
+Assertions.assertNotNull(entity3);
+logger.info("search for Account Name");
 
 
 	}

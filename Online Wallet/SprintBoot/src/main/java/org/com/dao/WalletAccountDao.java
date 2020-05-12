@@ -24,10 +24,6 @@ import org.springframework.stereotype.Repository;
 public interface WalletAccountDao extends JpaRepository<WalletAccount, Integer>{
 
 
-
-
-
-
 	@Query( value = "select account_balance from wallet_account where user_id = :user_id", nativeQuery=true)
 	double getAccountBalance(@Param("user_id") int user_id);
 	

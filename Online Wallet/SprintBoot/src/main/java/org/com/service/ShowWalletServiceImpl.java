@@ -42,14 +42,10 @@ public double showBalance(int uid) {
 
    }
 
-
-
    public List<WalletTransaction> showTransactions(int uid){
    return transactDao.getTransaction(uid);
 
    }
-
-
 
 
    public Optional<Integer> getAccountId(int uid){
