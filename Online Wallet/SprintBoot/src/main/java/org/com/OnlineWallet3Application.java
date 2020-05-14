@@ -13,8 +13,8 @@ public class OnlineWallet3Application {
 
 	public static void main(String[] args) {
 		SpringApplication.run(OnlineWallet3Application.class, args);
-		
 		System.out.println("Run");
+
 	}
 	@Bean
 	public Docket productApi() {

@@ -1,9 +1,11 @@
 package org.com;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.com.model.WalletAccount;
 import org.com.model.WalletTransaction;
-
-
+import org.com.model.WalletUser;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -33,51 +35,45 @@ class OnlineWallet3ApplicationTests {
 	public void showTransactionById()
 	{
 	
-ResponseEntity<WalletTransaction> entity=
-		restTemplate.getForEntity("http://localhost:9060/wallet/showTransactions/201",WalletTransaction.class );
 
+		List<WalletTransaction>  entity=
+				(List<WalletTransaction> )restTemplate.getForObject("http://localhost:9060/wallet/showTransactions/201",List.class );
 Assertions.assertNotNull(entity);
 logger.info("search for transaction histoy");
-
-	}
+}
 	
 	@Test
 	public void showBalanceById() {
-
-ResponseEntity<WalletAccount> entity1=
-restTemplate.getForEntity("http://localhost:9060/wallet/showBalance/102",WalletAccount.class );
-
-
+		Optional <Integer> entity1=
+				(Optional<Integer>) restTemplate.getForObject("http://localhost:9060/wallet/showBalance/102",Optional.class );
 Assertions.assertNotNull(entity1);
 logger.info("search for balance");
-
-
-	}
+}
+	
 	@Test
 	public void getAccountId() {
+		
+Optional <Integer> entity2=
 
-ResponseEntity<WalletAccount> entity2=
-restTemplate.getForEntity("http://localhost:9060/wallet/getAccountId/101",WalletAccount.class );
-
-
+(Optional<Integer>) restTemplate.getForObject("http://localhost:9060/wallet/getAccountId/101",Optional.class );
 Assertions.assertNotNull(entity2);
 logger.info("search for Account Id");
-
-
-	}
+}
+	
+	
 	@Test
 	public void getAccountName() {
-
 ResponseEntity<WalletAccount> entity3=
-restTemplate.getForEntity("http://localhost:9060/wallet/getAccountName/102",WalletAccount.class );
-
-
+restTemplate.getForEntity("http://localhost:9060/wallet/getAccountName/103",WalletAccount.class );
 Assertions.assertNotNull(entity3);
 logger.info("search for Account Name");
+	}
+	
+	
 
 
 	}
-	}
+	
 
 
 
